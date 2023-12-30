@@ -1,8 +1,8 @@
 {
   "name": "edge-built-in-translate-repairer",
   "version": "0.0.1",
-  "description": "fix Edge's built-in translation breaks typography bug",
-  "productName": "Edge Built-in Translate Repairer",
+  "description": "修复了Edge浏览器内置翻译功能导致代码块移动到段尾的问题 | Fixed the problem that the built-in translation function of Edge browser causes the code block to move to the end of the paragraph",
+  "productName": "Edge内置翻译修复器 | Edge Built-in Translate Repairer",
   "author": "MC_XiaoHei <xiaohei.xor7studio@foxmail.com>",
   "private": true,
   "scripts": {
