@@ -1,41 +1,13 @@
 # Edge Built-in Translate Repairer (edge-built-in-translate-repairer)
 
-fix Edge's built-in translation breaks typography bug
+修复了Edge内置翻译导致的`<code>`块中内容被移动到段尾的问题
 
-## Install the dependencies
-```bash
-yarn
-# or
-npm install
-```
+**尚未完成**
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
-quasar dev
-```
+## 修复原理
 
+Edge在翻译`<div>`等块级元素中的文字时，会把`<code>`块中的内容移动到段尾，但如果将文字包裹在`<span>`中，就不会出现这个问题。
 
-### Lint the files
-```bash
-yarn lint
-# or
-npm run lint
-```
+## 怎么发现的？
 
-
-### Format the files
-```bash
-yarn format
-# or
-npm run format
-```
-
-
-
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+某天，我在读某英文文档时候，突然发现，加粗的段落中的代码块没有被移动到段尾，而是保持在原处，进一步实验发现`<span>`块也可以实现同样的效果，故有了这个插件。
