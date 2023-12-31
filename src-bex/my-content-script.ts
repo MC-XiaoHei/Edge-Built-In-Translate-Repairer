@@ -20,7 +20,7 @@ export default bexContent(async (bridge) => {
     });
     await bridge.send('storage.set', {key: 'ebitr-blacklist', value: data});
     window.addEventListener('load', () => {
-        console.log('Edge Built-in Translate Repairer 已加载');
+        console.log('Edge Built-in Translate Repairer 正在修补该页面');
         document.querySelectorAll('code').forEach((element) => {
             if (ignoreTags.has(<string>element.parentElement?.tagName)) return;
             const parent = element.parentNode;
@@ -35,5 +35,6 @@ export default bexContent(async (bridge) => {
                 parent.appendChild(span);
             });
         });
+        console.log('Edge Built-in Translate Repairer 已修补该页面');
     });
 });
