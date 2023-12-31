@@ -1,9 +1,25 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <h3 class="col-12">Edge Built-In Translate Repairer</h3>
-    <q-card class="col-12" v-for="url in blacklist" :key="url">
-      {{ url }}
-    </q-card>
+  <q-page class="row items-center justify-center">
+    <q-space/>
+    <div class="col-12 row items-center" style="width: 500px">
+      <h5 class="col-12 text-center">Edge Built-In Translate Repairer</h5>
+      <div class="q-pa-md col-12 row justify-center items-center"
+           v-for="url in blacklist" :key="url">
+        <q-card style="width: 300px">
+          <q-card-section>
+            <q-item>
+              <q-item-section>
+                <q-item-label>{{ url }}</q-item-label>
+              </q-item-section>
+              <q-item-section side>
+                <q-btn flat round dense icon="delete"/>
+              </q-item-section>
+            </q-item>
+          </q-card-section>
+        </q-card>
+      </div>
+    </div>
+    <q-space/>
   </q-page>
 </template>
 
