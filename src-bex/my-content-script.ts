@@ -3,7 +3,7 @@
 
 import {bexContent} from 'quasar/wrappers';
 
-const ignoreTags = new Set(['SPAN', 'STRONG', 'A']);
+const ignoreTags = new Set(['SPAN', 'STRONG', 'A', 'CODE']);
 
 export default bexContent(async (bridge) => {
     let data = (await bridge.send('storage.get', {key: 'ebitr-blacklist'})).data;
