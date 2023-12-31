@@ -13,8 +13,8 @@
     "build": "quasar build"
   },
   "dependencies": {
+    "@formkit/auto-animate": "^0.8.1",
     "@quasar/extras": "^1.16.4",
-    "chromestorm": "^0.0.1",
     "events": "^3.3.0",
     "quasar": "^2.6.0",
     "vue": "^3.0.0",

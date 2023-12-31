@@ -1,27 +1,30 @@
 <template>
-  <q-page class="fit row items-center justify-evenly">
-    AAAAA
-    <q-toggle v-model="enable"  color="primary" keep-color/>
+  <q-page class="row items-center justify-evenly">
+    <h3 class="col-12">Edge Built-In Translate Repairer</h3>
+    <q-card class="col-12" v-for="url in blacklist" :key="url">
+      {{ url }}
+    </q-card>
   </q-page>
 </template>
 
 <script setup lang="ts">
-import {ref, watch} from 'vue';
+import {useQuasar} from 'quasar';
+import {ref} from 'vue';
 
-const enable = ref(inBlacklist());
-let blackList = ref([]);
+let blacklist = ref<string[]>([]);
+const bridge = useQuasar().bex;
 
-watch(enable, (newValue, oldValue) => {
-  console.log(`enable changed from ${oldValue} to ${newValue}`);
-  // blackList.push(window.location.href);
-  // chrome.storage.sync.set({'ebitr-black-list': blackList});
-});
-
-async function inBlacklist() {
-  chrome.storage.sync.get('ebitr-black-list').then((result) => {
-    blackList.value = result['ebitr-black-list'] || [];
-  });
-  console.log(blackList)
-  return true;
+async function getBlacklist() {
+  let blacklist = (await bridge.send('storage.get', {key: 'ebitr-blacklist'})).data;
+  if (blacklist === undefined) {
+    await bridge.send('storage.set', {key: 'ebitr-blacklist', value: []});
+    blacklist = [];
+  }
+  console.log(blacklist);
+  return blacklist;
 }
+
+getBlacklist().then((data) => {
+  blacklist.value = data;
+});
 </script>

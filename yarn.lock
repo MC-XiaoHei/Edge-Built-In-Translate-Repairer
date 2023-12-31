@@ -49,6 +49,11 @@
   resolved "https://registry.npmmirror.com/@eslint/js/-/js-8.56.0.tgz#ef20350fec605a7f7035a01764731b2de0f3782b"
   integrity sha512-gMsVel9D7f2HLkBma9VbtzZRehRogVRfbr++f06nL2vnCGCNlzOD+/MUov/F4p8myyAHspEhVobgjpX64q5m6A==
 
+"@formkit/auto-animate@^0.8.1":
+  version "0.8.1"
+  resolved "https://registry.npmmirror.com/@formkit/auto-animate/-/auto-animate-0.8.1.tgz#bcaba2969609ca3a7453eacd42b383a2739dfa35"
+  integrity sha512-0/Z2cuNXWVVIG/l0SpcHAWFhGdvLJ8DRvEfRWvmojtmRWfEy+LWNwgDazbZqY0qQYtkHcoEK3jBLkhiZaB/4Ig==
+
 "@humanwhocodes/config-array@^0.11.13":
   version "0.11.13"
   resolved "https://registry.npmmirror.com/@humanwhocodes/config-array/-/config-array-0.11.13.tgz#075dc9684f40a531d9b26b0822153c1e832ee297"
@@ -825,11 +830,6 @@ chardet@^0.7.0:
     readdirp "~3.6.0"
   optionalDependencies:
     fsevents "~2.3.2"
-
-chromestorm@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.npmmirror.com/chromestorm/-/chromestorm-0.0.1.tgz#b83986bc0f5efeb63e56853223029c7041c6031e"
-  integrity sha512-WX5X3103nzYGlnnVP8gJ4IBXJqzHvs3992gldihrRaHPEnqZip6yKTCwM8M8H80bL0/aiWLi8yv4iGZj9QCPrQ==
 
 ci-info@^3.7.1:
   version "3.9.0"

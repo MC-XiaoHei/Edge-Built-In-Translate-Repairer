@@ -5,11 +5,20 @@ import {bexContent} from 'quasar/wrappers';
 
 const ignoreTags = new Set(['SPAN', 'STRONG', 'A']);
 
-export default bexContent(async () => {
-    // (await chrome.storage.sync.get('ebitr-black-list')).forEach((item: string) => {
-    //     if (new RegExp(item).test(window.location.href)) return;
-    // });
-    console.log(chrome.storage.sync.get('ebitr-black-list'));
+export default bexContent(async (bridge) => {
+    let data = (await bridge.send('storage.get', {key: 'ebitr-blacklist'})).data;
+    if (data === undefined) {
+        await bridge.send('storage.set', {key: 'ebitr-blacklist', value: []});
+        data = [];
+    }
+    const url = window.location.href;
+    data.forEach((item: string) => {
+        if (RegExp(item).test(url)) {
+            console.log(`Edge Built-in Translate Repairer 已在该页被 ${item} 规则禁用`);
+            return;
+        }
+    });
+    await bridge.send('storage.set', {key: 'ebitr-blacklist', value: data});
     window.addEventListener('load', () => {
         console.log('Edge Built-in Translate Repairer 已加载');
         document.querySelectorAll('code').forEach((element) => {
