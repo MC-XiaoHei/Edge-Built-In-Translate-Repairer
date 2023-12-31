@@ -27,7 +27,6 @@ export default bexContent(async (bridge) => {
             if (parent === null) return;
             const spans: HTMLSpanElement[] = [];
             while (parent.firstChild) {
-                if (ignoreTags.has(<string>parent.firstElementChild?.tagName)) break;
                 const span = document.createElement('span');
                 span.appendChild(parent.firstChild);
                 spans.push(span);
