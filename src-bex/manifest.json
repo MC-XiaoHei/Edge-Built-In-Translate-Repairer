@@ -16,9 +16,7 @@
     "*://*/*"
   ],
 
-  "action": {
-    "default_popup": "www/index.html#/popup"
-  },
+  "action": {},
 
   "background": {
     "service_worker": "background.js"
